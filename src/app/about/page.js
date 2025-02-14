@@ -1,9 +1,12 @@
 "use client";
+import React from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import React from "react";
 
-const About = () => {
+export default function About() {
+  const router = useRouter();
+
   const content = {
     title: "Event Ticket Booking UI – Open Source Practice Project 🎟",
     sections: [
@@ -19,7 +22,7 @@ The project consists of a three-step ticket booking flow, and developers can ext
         • Users can browse available tickets (Free & Paid).  
         • Ticket options are displayed in a list or card view.  
         • For Free Tickets → Clicking "Get Free Ticket" proceeds to attendee details.  
-        • For Paid Tickets → Clicking "Purchase Ticket" would ideally open a payment modal.  
+        • For Paid Tickets → Clicking "Purchase Ticket" would ideally open a payment modal.
         
         2. Attendee Details Form  
         • Users input their Name, Email, and optional Phone Number.  
@@ -60,7 +63,7 @@ The project consists of a three-step ticket booking flow, and developers can ext
 • Dynamic UI updates based on ticket selection.  
 • Persisting bookings using local state or a backend.  
 • Integrating payment gateways for ticket purchases.  
-• Generating & validating QR Codes for event check-in (Advanced).  
+• Generating & validating QR Codes for event check-in (Advanced).
 
 Need Help? Reach Out! 💬`,
       },
@@ -68,23 +71,26 @@ Need Help? Reach Out! 💬`,
   };
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen bg-[#041e22] px-6">
+    <main className="flex flex-col items-center justify-center min-h-screen bg-[#041e22] px-4">
       {/* Main Card */}
-      <Card className="w-[800px] bg-[#05252c] rounded-[40px] border border-[#0e464f] p-8 shadow-lg">
+      <Card
+        className="w-full max-w-[90%] md:max-w-[600px] lg:max-w-[800px]
+        bg-[#05252c] rounded-[40px] border border-[#0e464f] p-6 md:p-8 shadow-lg"
+      >
         <CardContent className="flex flex-col items-center gap-8">
           {/* Title */}
-          <h1 className="text-2xl font-semibold text-white text-center leading-snug">
+          <h1 className="text-xl md:text-2xl font-semibold text-white text-center leading-snug">
             {content.title}
           </h1>
 
           {/* Sections */}
-          <div className="text-white leading-[150%] font-normal text-base w-full">
+          <div className="text-white leading-[150%] font-normal text-sm md:text-base w-full">
             {content.sections.map((section, index) => (
               <div key={index} className="mb-6">
                 {section.heading && (
                   <h2 className="font-medium text-lg mb-3">{section.heading}</h2>
                 )}
-                <p className="whitespace-pre-line text-gray-300 text-sm leading-relaxed">
+                <p className="whitespace-pre-line text-gray-300 leading-relaxed">
                   {section.content}
                 </p>
               </div>
@@ -92,23 +98,25 @@ Need Help? Reach Out! 💬`,
           </div>
 
           {/* Footer Message */}
-          <div className="font-normal text-white text-[80px] text-center leading-[120px]">
+          <div className="font-normal text-white text-[48px] md:text-[80px] text-center leading-[60px] md:leading-[120px]">
             💛 Enjoy
           </div>
 
           {/* Buttons */}
-          <div className="flex items-center justify-center gap-6 p-4 bg-[#041e22] rounded-2xl border border-[#0e464f] w-full">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 p-4 bg-[#041e22] rounded-2xl border border-[#0e464f] w-full">
             <Button
               variant="outline"
               onClick={() => router.push("/")}
-              className="w-[200px] text-[#23a0b5] border-[#23a0b5] hover:text-white hover:bg-[#23a0b5]"
+              className="md:w-[200px] text-[#23a0b5] border-[#23a0b5] hover:text-white hover:bg-[#23a0b5]"
             >
               Design File
             </Button>
-            <Button 
-              className="w-[200px] bg-[#23a0b5] hover:bg-[#1d8b9f]"
-              onClick={() => router.push("https://github.com/KogecTech/hngx-stage2-ticket-generator.git")}
-              >
+            <Button
+              className="md:w-[200px] bg-[#23a0b5] hover:bg-[#1d8b9f]"
+              onClick={() =>
+                router.push("https://github.com/KogecTech/hngx-stage2-ticket-generator.git")
+              }
+            >
               Github Code
             </Button>
           </div>
@@ -116,6 +124,4 @@ Need Help? Reach Out! 💬`,
       </Card>
     </main>
   );
-};
-
-export default About;
+}
