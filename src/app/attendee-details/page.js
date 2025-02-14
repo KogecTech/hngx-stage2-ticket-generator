@@ -103,41 +103,40 @@ export default function AttendeeDetails() {
   };
 
   return (
-    <div className="w-full h-[200px] flex flex-col items-center justify-center gap-4 p-6 rounded-3xl 
-  border-2 border-[#07363e] backdrop-blur-[14px] bg-[#041e22] relative max-w-[90%] md:max-w-[600px]">
+    <div className="flex justify-center items-center min-h-screen bg-[#041e22] px-4">
       <Card
-        className="relative w-full max-w-[702px] p-12 rounded-3xl border border-[#0e464f] bg-[#041e22]
+        className="relative w-full max-w-[90%] md:max-w-[700px] lg:max-w-[900px] p-6 md:p-12
+        rounded-3xl border border-[#0e464f] bg-[#041e22]
         shadow-[inset_0px_0px_10px_2px_rgba(35,160,181,0.3)]"
       >
         <ProgressBar step={2} />
 
-        <CardContent className="flex flex-col gap-6 relative z-10">
-          <div className="w-full bg-[#042127] rounded-3xl border-[#07363e] p-6 flex flex-col gap-6">
-            <label className="text-xl font-bold text-white mb-6 mt-2">
+        <CardContent className="flex flex-col gap-8 relative z-10">
+          {/* Upload Section */}
+          <div className="bg-[#042127] rounded-3xl border-[#07363e] p-4 md:p-6 flex flex-col gap-4 md:gap-6">
+            <label className="text-lg md:text-xl font-bold text-white mb-4 md:mb-6 mt-2">
               UploadCloudIcon Profile Photo
             </label>
-  
-          <div className="h-[200px] flex items-center justify-center bg-[#00000033]">
-            <div className="w-60 h-60 flex flex-col items-center justify-center gap-4 p-6 bg-[#0e464e] rounded-[32px] border-4 border-[#23a0b580] my-[-20px]">
-              <UploadBox onChange={handleImageUpload} isUploading={isUploading} />
+            <div className="h-[200px] flex items-center justify-center bg-[#00000033]">
+              <div className="w-48 h-48 md:w-60 md:h-60 flex flex-col items-center justify-center gap-4 p-6 bg-[#0e464e] rounded-[32px] border-4 border-[#23a0b580] my-[-20px]">
+                <UploadBox onChange={handleImageUpload} isUploading={isUploading} />
+              </div>
             </div>
+            {uploadedImageUrl && (
+              <img
+                src={uploadedImageUrl}
+                alt="Uploaded"
+                className="mt-2 w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border border-[#23a0b5]"
+              />
+            )}
           </div>
 
-          {uploadedImageUrl && (
-            <img
-              src={uploadedImageUrl}
-              alt="Uploaded"
-              className="mt-2 w-20 h-20 rounded-full object-cover border border-[#23a0b5]"
-            />
-          )}
-        </div>
-
-          
+          {/* Divider */}
           <div className="w-full h-1 bg-[#07363e]" />
 
-          <div className="w-full h-[200px] flex flex-col items-center justify-center gap-4 p-6 rounded-3xl 
-  border-2 border-[#07363e] backdrop-blur-[14px] bg-[#041e22] relative max-w-[90%] md:max-w-[600px]">
-            <label className="text-sm text-gray-400">Enter your Full Name</label>
+          {/* Form Section */}
+          <div className="flex flex-col gap-4">
+            <label className="text-sm md:text-base text-gray-400">Enter your Full Name</label>
             <Input
               name="name"
               value={attendee.name}
@@ -148,7 +147,7 @@ export default function AttendeeDetails() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <label className="text-sm text-gray-400">Enter your Email</label>
+            <label className="text-sm md:text-base text-gray-400">Enter your Email</label>
             <Input
               name="email"
               value={attendee.email}
@@ -159,7 +158,7 @@ export default function AttendeeDetails() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <label className="text-sm text-gray-400">Special Requests</label>
+            <label className="text-sm md:text-base text-gray-400">Special Requests</label>
             <textarea
               name="specialRequest"
               value={attendee.specialRequest}
@@ -170,22 +169,23 @@ export default function AttendeeDetails() {
           </div>
 
           {selectedTicket && (
-            <div className="p-4  text-white ">
+            <div className="p-4 text-white">
               <p className="text-lg font-semibold capitalize">{selectedTicket.type}</p>
               <p>Quantity: {selectedTicket.quantity}</p>
             </div>
           )}
 
-          <div className="flex gap-4 w-full mt-4">
+          {/* Buttons */}
+          <div className="flex flex-col md:flex-row gap-4 w-full mt-4">
             <Button
               variant="outline"
-              className="w-1/2 text-[#23a0b5] border-[#23a0b5] py-3"
+              className="md:w-1/2 text-[#23a0b5] border-[#23a0b5] py-3"
               onClick={() => router.push("/")}
             >
               Cancel
             </Button>
-            <Button className="w-1/2 bg-[#23a0b5] py-3" onClick={handleNext}>
-              Get My Free Ticket 
+            <Button className="md:w-1/2 bg-[#23a0b5] py-3" onClick={handleNext}>
+              Get My Free Ticket
             </Button>
           </div>
         </CardContent>
@@ -193,3 +193,4 @@ export default function AttendeeDetails() {
     </div>
   );
 }
+
