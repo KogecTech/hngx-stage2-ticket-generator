@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react"; 
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
@@ -10,11 +10,10 @@ export default function Home() {
   }, [router]);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[#041e22]">
-      <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-wide text-center shadow-lg">
+    <div className="flex items-center justify-center min-h-screen bg-[#041e22] px-4 text-center">
+      <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-wide shadow-lg">
         Techember Fest '25
       </h1>
-    </div>  
-  
+    </div>
   );
 }
