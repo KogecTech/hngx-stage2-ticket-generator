@@ -71,11 +71,11 @@ Need Help? Reach Out! 💬`,
   };
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen bg-[#041e22] px-4">
+    <main className="flex flex-col items-center justify-center min-h-screen  px-4">
       {/* Main Card */}
       <Card
         className="w-full max-w-[90%] md:max-w-[600px] lg:max-w-[800px]
-        bg-[#05252c] rounded-[40px] border border-[#0e464f] p-6 md:p-8 shadow-lg"
+         rounded-[40px] border border-[#0e464f] p-6 md:p-8 shadow-lg"
       >
         <CardContent className="flex flex-col items-center gap-8">
           {/* Title */}

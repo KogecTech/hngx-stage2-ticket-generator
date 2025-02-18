@@ -103,17 +103,17 @@ export default function AttendeeDetails() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-[#041e22] px-4">
+    <div className="flex justify-center items-center min-h-screen  px-4">
       <Card
         className="relative w-full max-w-[90%] md:max-w-[700px] lg:max-w-[900px] p-6 md:p-12
-        rounded-3xl border border-[#0e464f] bg-[#041e22]
+        rounded-3xl border border-[#0e464f]
         shadow-[inset_0px_0px_10px_2px_rgba(35,160,181,0.3)]"
       >
         <ProgressBar step={2} />
 
         <CardContent className="flex flex-col gap-8 relative z-10">
           {/* Upload Section */}
-          <div className="bg-[#042127] rounded-3xl border-[#07363e] p-4 md:p-6 flex flex-col gap-4 md:gap-6">
+          <div className="rounded-3xl border-[#07363e] p-4 md:p-6 flex flex-col gap-4 md:gap-6">
             <label className="text-lg md:text-xl font-bold text-white mb-4 md:mb-6 mt-2">
               UploadCloudIcon Profile Photo
             </label>

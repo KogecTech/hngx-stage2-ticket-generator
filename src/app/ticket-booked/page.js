@@ -111,16 +111,16 @@ const TicketBooked = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-[#041e22] px-4">
+    <div className="flex justify-center items-center min-h-screen px-4">
       <Card
         className="relative w-full max-w-[90%] md:max-w-[700px] lg:max-w-[900px]
-        p-6 md:p-12 rounded-3xl border border-[#0e464f] bg-[#041e22]
+        p-6 md:p-12 rounded-3xl border border-[#0e464f]
         shadow-[inset_0px_0px_10px_2px_rgba(35,160,181,0.3)]"
       >
         <ProgressBar step={3} />
 
         <CardContent className="flex flex-col items-center gap-8 relative z-10">
-          <Card className="w-full bg-[#08252b] rounded-[32px] border-[#0e464e]">
+          <Card className="w-full rounded-[32px] border-[#0e464e]">
             <CardContent className="p-6 flex flex-col gap-8 items-center">
               {/* Title */}
               <h1 className="[font-family:'JejuMyeongjo-Regular',Helvetica] text-white text-[24px] md:text-[32px] leading-normal text-center">
@@ -171,13 +171,13 @@ const TicketBooked = () => {
                           />
                         )}
 
-                        <div className="flex flex-col w-full bg-[#07333c] rounded-lg border border-solid border-[#123d43]">
+                        <div className="mt-[-10] flex flex-col w-full bg-[#07333c] rounded-lg border border-solid border-[#123d43]">
                           <div className="flex border-b border-[#12464e]">
                             <div className="flex-1 border-r border-[#12464e] p-1">
                               <p className="text-white/30 text-[8px] md:text-[10px] leading-[10px] md:leading-[15px]">
                                 Full Name
                               </p>
-                              <p className="font-bold text-xs text-white">
+                              <p className="font-bold text-xs text-white break-words max-h-4 overflow-auto">
                                 {ticketData.fullName}
                               </p>
                             </div>
@@ -185,7 +185,7 @@ const TicketBooked = () => {
                               <p className="text-white/30 text-[8px] md:text-[10px] leading-[10px] md:leading-[15px]">
                                 Email
                               </p>
-                              <p className="font-bold text-xs text-white">
+                              <p className="font-bold text-xs text-white break-all overflow-auto max-h-8 ">
                                 {ticketData.email}
                               </p>
                             </div>
@@ -214,7 +214,7 @@ const TicketBooked = () => {
                             <p className="text-white/30 text-[8px] md:text-[10px] leading-[10px] md:leading-[15px]">
                               Special Request
                             </p>
-                            <p className="text-[8px] md:text-[10px] text-white leading-[10px] md:leading-[15px]">
+                            <p className="text-[8px] md:text-[10px] text-white max-h-8 leading-[10px] md:leading-[15px] break-words overflow-auto">
                               {ticketData.specialRequest}
                             </p>
                           </div>

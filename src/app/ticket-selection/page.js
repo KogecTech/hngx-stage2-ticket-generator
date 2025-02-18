@@ -48,10 +48,10 @@ export default function TicketSelection() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-[#041e22] px-4">
+    <div className="flex justify-center items-center min-h-screen  px-4">
       <Card
         className="relative w-full max-w-[90%] md:max-w-[700px] lg:max-w-[900px] p-6 md:p-12
-        rounded-3xl border border-[#0e464f] bg-[#041e22]
+        rounded-3xl border border-[#0e464f]
         shadow-[inset_0px_0px_10px_2px_rgba(35,160,181,0.3)]"
       >
         <ProgressBar step={1} />

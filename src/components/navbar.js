@@ -10,10 +10,13 @@ const navigationItems = [
 
 export default function Header() {
   return (
-    <header className="w-full fixed top-0 left-0 z-50 bg-[#05252c99] backdrop-blur-lg">
+    <header className="w-full fixed top-0 left-0 z-50 backdrop-blur-lg">
       <div className="max-w-[1200px] mx-auto flex items-center justify-between px-6 py-4 rounded-3xl border border-[#197686]">
         
         {/* Logo Section */}
+        <div className="flex-shrink-0">
+          <img src="/hugeicons_ticket-01.png" alt="Logo" className="h-12 w-auto" />
+        </div>
         <div className="flex-shrink-0">
           <img src="/ticz.png" alt="Logo" className="h-10 w-auto" />
         </div>
