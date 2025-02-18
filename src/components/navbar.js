@@ -14,10 +14,8 @@ export default function Header() {
       <div className="max-w-[1200px] mx-auto flex items-center justify-between px-6 py-4 rounded-3xl border border-[#197686]">
         
         {/* Logo Section */}
-        <div className="flex-shrink-0">
+        <div className="flex items-center gap-0">
           <img src="/hugeicons_ticket-01.png" alt="Logo" className="h-12 w-auto" />
-        </div>
-        <div className="flex-shrink-0">
           <img src="/ticz.png" alt="Logo" className="h-10 w-auto" />
         </div>
 
